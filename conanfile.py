@@ -6,7 +6,7 @@ from conans.errors import ConanInvalidConfiguration
 
 class SpdlogConan(ConanFile):
     name = "spdlog"
-    version = "1.4.2"
+    version = "1.7.0"
     description = "Fast C++ logging library"
     url = "https://github.com/bincrafters/conan-spdlog"
     homepage = "https://github.com/gabime/spdlog"
@@ -67,9 +67,6 @@ class SpdlogConan(ConanFile):
         return cmake
 
     def build(self):
-        if self.options.header_only:
-            tools.patch(base_path=self._source_subfolder,
-                        patch_file=os.path.join("patches", "0001-header-only.patch"))
         cmake = self._configure_cmake()
         cmake.build()
 

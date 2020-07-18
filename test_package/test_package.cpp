@@ -11,7 +11,7 @@
 #define SPDLOG_DEBUG_ON
 
 #ifdef SPDLOG_FMT_EXTERNAL
-#	include "fmt/format.h"
+#    include "fmt/format.h"
 #endif
 
 #include "spdlog/spdlog.h"
@@ -79,9 +79,9 @@ int main(int, char *[])
         // Release and close all loggers
         spdlog::drop_all();
 
-		#ifdef SPDLOG_FMT_EXTERNAL
-			fmt::print("The format library says the answer is {}\n", 42);
-		#endif
+        #ifdef SPDLOG_FMT_EXTERNAL
+            fmt::print("The format library says the answer is {}\n", 42);
+        #endif
     }
     // Exceptions will only be thrown upon failed logger or sink construction (not during logging)
     catch (const spd::spdlog_ex &ex)
